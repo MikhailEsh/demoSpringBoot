@@ -1,4 +1,4 @@
-package com.boylegu.springboot_vue;
+package com.boylegu.springboot.vue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,8 +6,6 @@ import org.junit.Before;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.mock.web.MockServletContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -19,9 +17,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.boylegu.springboot_vue.controller.MainController;
-import com.boylegu.springboot_vue.entities.Persons;
-import com.boylegu.springboot_vue.dao.PersonsRepository;
+import com.boylegu.springboot.vue.controller.MainController;
+import com.boylegu.springboot.vue.entities.Persons;
+import com.boylegu.springboot.vue.dao.PersonsRepository;
 
 
 /**

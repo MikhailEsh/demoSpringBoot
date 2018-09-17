@@ -1,4 +1,4 @@
-package com.boylegu.springboot_vue.config;
+package com.boylegu.springboot.vue.config;
 
 import java.sql.Types;
 

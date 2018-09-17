@@ -1,4 +1,4 @@
-package com.boylegu.springboot_vue.config;
+package com.boylegu.springboot.vue.config;
 
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
@@ -29,7 +29,7 @@ public class WebLogAspect {
 
     ThreadLocal<Long> startTime = new ThreadLocal<>();
 
-    @Pointcut("execution(public * com.boylegu.springboot_vue.controller..*.*(..))")
+    @Pointcut("execution(public * com.boylegu.springboot.vue.controller..*.*(..))")
     public void webLog(){}
 
     @Before("webLog()")

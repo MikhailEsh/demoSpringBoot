@@ -1,6 +1,7 @@
-package com.boylegu.springboot_vue.controller;
+package com.boylegu.springboot.vue.controller;
 
-import com.boylegu.springboot_vue.entities.Persons;
+import com.boylegu.springboot.vue.controller.pagination.PaginationMultiTypeValuesHelper;
+import com.boylegu.springboot.vue.entities.Persons;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,9 +19,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.PageRequest;
 
-import com.boylegu.springboot_vue.dao.PersonsRepository;
-import com.boylegu.springboot_vue.controller.pagination.PaginationMultiTypeValuesHelper;
-import com.boylegu.springboot_vue.controller.pagination.PaginationFormatting;
+import com.boylegu.springboot.vue.dao.PersonsRepository;
+import com.boylegu.springboot.vue.controller.pagination.PaginationFormatting;
 
 import java.util.*;
 

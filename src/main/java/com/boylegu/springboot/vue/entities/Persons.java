@@ -1,4 +1,4 @@
-package com.boylegu.springboot_vue.entities;
+package com.boylegu.springboot.vue.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;

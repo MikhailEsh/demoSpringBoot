@@ -1,10 +1,10 @@
-package com.boylegu.springboot_vue.exception;
+package com.boylegu.springboot.vue.exception;
 
 /**
  * Created by gubaoer on 17/7/2.
  */
 
-import com.boylegu.springboot_vue.dao.ErrorInfo;
+import com.boylegu.springboot.vue.dao.ErrorInfo;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
