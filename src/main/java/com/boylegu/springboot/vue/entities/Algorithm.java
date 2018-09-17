@@ -12,18 +12,18 @@ import java.io.Serializable;
 public class Algorithm implements Serializable {
 
     @Id
-    @Column(name = "namelog")
-    private String namelog;
+    @Column(name = "namealgo")
+    private String namealgo;
 
     @Column(name = "favorite")
     private Boolean favorite;
 
-    public String getNamelog() {
-        return namelog;
+    public String getNamealgo() {
+        return namealgo;
     }
 
-    public void setNamelog(String namelog) {
-        this.namelog = namelog;
+    public void setNamealgo(String namealgo) {
+        this.namealgo = namealgo;
     }
 
     public Boolean getFavorite() {
