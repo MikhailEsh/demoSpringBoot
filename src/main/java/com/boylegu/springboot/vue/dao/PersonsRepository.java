@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface PersonsRepository extends JpaRepository<Persons, Long> {
 
-    public static final String FIND_SEX = "select DISTINCT sex from Persons p";
+    String FIND_SEX = "select DISTINCT sex from Persons p";
 
     @Query(FIND_SEX)
     List<Persons> findSex();
