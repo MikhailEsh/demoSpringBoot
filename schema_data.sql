@@ -48,3 +48,9 @@ INSERT INTO public.algorithms (namealgo, favorite) VALUES ('Pinging', false);
 INSERT INTO public.algorithms (namealgo, favorite) VALUES ('Advancing the bid', false);
 INSERT INTO public.algorithms (namealgo, favorite) VALUES ('N-minute Loss', false);
 INSERT INTO public.algorithms (namealgo, favorite) VALUES ('Off-market deals', false);
+
+
+create table testtable(testname varchar(255),testvar varchar(255), primary key (testname));
+INSERT INTO testtable (testname,testvar) VALUES ('test 1', '1-st test');
+INSERT INTO testtable (testname,testvar) VALUES ('test 2', '1-nd test');
+INSERT INTO testtable (testname,testvar) VALUES ('test 3', '3-rd test');
