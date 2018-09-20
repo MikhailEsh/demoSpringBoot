@@ -3,6 +3,7 @@ package com.boylegu.springboot.vue.controller;
 import com.boylegu.springboot.vue.controller.pagination.PaginationMultiTypeValuesHelper;
 import com.boylegu.springboot.vue.entities.Persons;
 
+import org.springframework.jdbc.datasource.init.ScriptUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +23,8 @@ import org.springframework.data.domain.PageRequest;
 import com.boylegu.springboot.vue.dao.PersonsRepository;
 import com.boylegu.springboot.vue.controller.pagination.PaginationFormatting;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.*;
 
 
@@ -34,6 +37,20 @@ public class MainController {
 
     @Value(("${com.boylegu.paginatio.max-per-page}"))
     Integer maxPerPage;
+
+
+    public static void main(String[] args) throws Exception {
+        String url = "jdbc:postgresql://localhost:5432/postgres";
+        Class.forName("org.postgresql.Driver");
+        Connection db = DriverManager.getConnection(url, "postgres", "postgres");
+        System.out.println("Initializing database and creating tables");
+        db.setAutoCommit(false);
+        ScriptUtils.executeSqlScript(db, new FileSystemResource("tables_postgres.sql"));
+        db.setAutoCommit(true);
+        db.close();
+        System.out.println("Database initialized");
+    }
+
 
     @RequestMapping(value = "/sex", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getSexAll() {
