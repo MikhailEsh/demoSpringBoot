@@ -18,6 +18,9 @@ public class Algorithm implements Serializable {
     @Column(name = "favorite")
     private Boolean favorite;
 
+    @Column(name = "countrun")
+    private Integer countrun;
+
     public String getNamealgo() {
         return namealgo;
     }
@@ -32,5 +35,13 @@ public class Algorithm implements Serializable {
 
     public void setFavorite(Boolean favorite) {
         this.favorite = favorite;
+    }
+
+    public Integer getCountrun() {
+        return countrun;
+    }
+
+    public void setCountrun(Integer countrun) {
+        this.countrun = countrun;
     }
 }

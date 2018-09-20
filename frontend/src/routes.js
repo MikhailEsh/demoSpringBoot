@@ -12,8 +12,8 @@ const Tables = Loadable({
   loading: Loading,
 });
 
-const Algorithms = Loadable({
-    loader: () => import('./views/Base/Algorithms'),
+const ReportPage = Loadable({
+    loader: () => import('./views/Base/ReportPage'),
     loading: Loading,
 });
 
@@ -32,7 +32,7 @@ const Typography = Loadable({
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
     { path: '/', exact: true, name: 'Home', component: DefaultLayout },
-    { path: '/base/algorithms', name: 'Algorithms', component: Algorithms },
+    { path: '/base/reportpage', name: 'ReportPage', component: ReportPage },
     { path: '/base/tables', name: 'Tables', component: Tables },
 ];
 

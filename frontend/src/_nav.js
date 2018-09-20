@@ -6,13 +6,13 @@ export default {
       icon: 'icon-puzzle',
       children: [
           {
-              name: 'Algorithms',
-              url: '/base/algorithms',
+              name: 'Tables',
+              url: '/base/tables',
               icon: 'icon-puzzle',
           },
           {
-              name: 'Tables',
-              url: '/base/tables',
+              name: 'ReportPage',
+              url: '/base/reportpage',
               icon: 'icon-puzzle',
           },
       ],
