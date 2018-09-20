@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {Col, Row} from 'reactstrap';
 import Algorithms from './Algorithms'
-
+import TableReport from './TableReport'
+import Alarm from './Alarm'
+import './ReportPage.css'
 
 class ReportPage extends Component {
 
@@ -16,12 +18,16 @@ class ReportPage extends Component {
 
     render() {
         return (
-            <div className="animated fadeIn">
-                <Row>
-                    <Col xs="12" lg="4">
+            <div className="animated fadeIn container">
+                    <div className="summary" id="summary">
                         <Algorithms/>
-                    </Col>
-                </Row>
+                    </div>
+                <div className="sections" id="sections">
+                    <TableReport/>
+                </div>
+                <div className="alarm" id="alarm">
+                    <Alarm/>
+                </div>
             </div>
 
         );

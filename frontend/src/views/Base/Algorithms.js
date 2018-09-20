@@ -93,7 +93,7 @@ class Algorithms extends Component {
                             <td>{algorithm.namealgo}</td>
                             <td>
                                 <AppSwitch
-                                    className={'float-right mb-0'}
+                                    // className={'float-right mb-0'}
                                     label
                                     color={'info'}
                                     onChange={
@@ -117,24 +117,16 @@ class Algorithms extends Component {
     render() {
         return (
             <div className="animated fadeIn">
-                <Card>
-                    <CardHeader>
-                        <p>Simple Table</p>
-                        <Button block color="primary">Set Favorite</Button>
-                    </CardHeader>
-                    <CardBody>
-                        <Table responsive>
-                            <thead>
-                            <tr>
-                                <th>Username</th>
-                                <th>Favorite</th>
-                                <th>Status</th>
-                            </tr>
-                            </thead>
-                            {this.renderFavorite()}
-                        </Table>
-                    </CardBody>
-                </Card>
+                <div className="card mb-3">
+                    <table className="table table-sm table-striped">
+                        <thead className="thead-light">
+                        <th>Username</th>
+                        <th>Favorite</th>
+                        <th>Status</th>
+                        </thead>
+                        {this.renderFavorite()}
+                    </table>
+                </div>
             </div>
 
         );

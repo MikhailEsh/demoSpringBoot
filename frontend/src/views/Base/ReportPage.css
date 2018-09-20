@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.summary {
+    grid-area: summary;
+    height: 350px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.sections {
+    grid-area: sections;
+    height: 350px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.alarm {
+    grid-area: alarm;
+}
+
+.header {
+    grid-area: header;
+    height: 5px;
+}
+
+
+.container{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:
+            "summary sections"
+            "alarm ."
+            ". .";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 4fr 1fr 60px;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    min-height: 100vh;
+    max-height: 100vh;
+}
