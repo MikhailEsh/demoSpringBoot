@@ -1,0 +1,1 @@
+INSERT INTO testtable (test_name,test_val) VALUES ('test 4', '4-th test');
