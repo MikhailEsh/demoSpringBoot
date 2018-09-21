@@ -22,13 +22,16 @@ class MultiTab extends Component {
             <ul className="nav nav-tabs">
                 {
                     this.state.xMultitabs.map((xMultitab) => {
-                        const isActive = (xMultitab === this.state.activeTab.xMultitab) ? "active": "";
-                        return (
-                            <li className="nav-item">
-                                <a className={"nav-link " + isActive} data-toggle="tab">{xMultitab}</a>
-                            </li>)
+                        <li className="nav-item">
+                            <a className="nav-link active" data-toggle="tab">Summary</a>
+                        </li>
                     })
+
+                    <li className="nav-item">
+                    <a className="nav-link" data-toggle="tab">Investigations</a>
+                    </li>
                 }
+
             </ul>
         );
   }

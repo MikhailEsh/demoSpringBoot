@@ -1,16 +1,23 @@
 export default {
-    items: [
+    multitabs: [
         {
-            name: 'Base',
-            url: '/base',
-            icon: 'icon-puzzle',
-            children: [
-                {
-                    name: 'ReportPage',
-                    url: '/base/reportpage',
-                    icon: 'icon-puzzle',
-                },
+            level: 1,
+            xMultitabs: [
+                'Show alerts',
+                'Show Incidents'
             ],
-        },
-    ],
+            yMultitabs: [
+                'Asset_class',
+                'Business_line',
+                'Client'
+            ],
+            tabels: [
+                {
+                    x: 'Show alerts',
+                    y: 'Asset_class',
+                }
+            ]
+
+        }
+    ]
 };

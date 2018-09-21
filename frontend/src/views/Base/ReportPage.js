@@ -6,13 +6,19 @@ import Alarm from './Alarm'
 import MultiTab from './MultiTab'
 import VerticalPills from './VerticalPills'
 import './ReportPage.css'
+import tables from "./tables";
 
 class ReportPage extends Component {
 
     constructor(props) {
         super(props);
-
+        const multitab = tables.multitabs.find((element) => {return element.level === 1;})
         this.state = {
+            multitab: multitab,
+            activeTab: {
+                xMultitab: multitab.xMultitabs[0],
+                yMultitab: multitab.yMultitabs[0]
+            },
             algorithms: [],
             savedAlgorithms: true
         };
@@ -28,10 +34,10 @@ class ReportPage extends Component {
                     <TableReport/>
                 </div>
                 <div className="multitabs" id="multitabs">
-                    <MultiTab/>
+                    <MultiTab activeTab={this.state.activeTab} xMultitabs={this.state.multitab.xMultitabs}/>
                 </div>
                 <div className="vertical-pills" id="vertical-pills">
-                    <VerticalPills/>
+                    <VerticalPills activeTab={this.state.activeTab}  yMultitabs={this.state.multitab.yMultitabs}/>
                 </div>
                 <div className="alarm" id="alarm">
                     <Alarm/>

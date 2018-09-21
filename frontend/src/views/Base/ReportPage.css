@@ -34,11 +34,11 @@
     box-sizing: border-box;
     display: grid;
     grid-template-areas:
-            "summary multitabs vertical-pills"
-            "summary sections vertical-pills"
-            "alarm . vertical-pills"
+            "summary vertical-pills multitabs "
+            "summary vertical-pills sections "
+            "alarm  vertical-pills ."
             ". . .";
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 1fr 3fr;
     grid-template-rows: 30px 4fr 1fr 60px;
     grid-column-gap: 20px;
     grid-row-gap: 2px;

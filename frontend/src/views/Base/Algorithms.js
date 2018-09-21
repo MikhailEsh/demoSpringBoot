@@ -18,7 +18,7 @@ class Algorithms extends Component {
     loadAlgorithms() {
         const bodyAlgo = {
             method: 'GET',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            headers: { 'Content-Type': 'application/xMultitab-www-form-urlencoded' },
             credentials: 'include'
         };
         fetch('http://localhost:8000/api/algorithms', bodyAlgo)
