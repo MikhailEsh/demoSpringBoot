@@ -7,11 +7,6 @@ function Loading() {
   return <div>Loading...</div>;
 }
 
-const Tables = Loadable({
-  loader: () => import('./views/Base/Tables'),
-  loading: Loading,
-});
-
 const ReportPage = Loadable({
     loader: () => import('./views/Base/ReportPage'),
     loading: Loading,
@@ -33,7 +28,6 @@ const Typography = Loadable({
 const routes = [
     { path: '/', exact: true, name: 'Home', component: DefaultLayout },
     { path: '/base/reportpage', name: 'ReportPage', component: ReportPage },
-    { path: '/base/tables', name: 'Tables', component: Tables },
 ];
 
 export default routes;

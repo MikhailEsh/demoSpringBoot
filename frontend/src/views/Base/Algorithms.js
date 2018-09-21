@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Badge, Button, Card, CardBody, CardHeader, Col, Row, Table} from 'reactstrap';
 import {AppSwitch} from '@coreui/react'
+import setting from '../../settings';
+import update from 'react-addons-update';
 
 
 class Algorithms extends Component {
@@ -9,8 +11,7 @@ class Algorithms extends Component {
         super(props);
 
         this.state = {
-            algorithms: [],
-            savedAlgorithms: true
+            algorithms: []
         };
     }
 
@@ -35,25 +36,23 @@ class Algorithms extends Component {
             .catch(err => console.error('Error: ', err));
     }
 
-    updateStateAlgorithms(algorithm) {
-        const oldAlgoFavor = this.state.algorithms.get(algorithm.namealgo).favorite;
-        this.state.algorithms.get(algorithm.namealgo).favorite = !oldAlgoFavor;
-        console.log(this.state.algorithms.get(algorithm.namealgo).favorite);
+    updateStateAlgorithms(namealgo) {
+        const newAlgorithms = this.state.algorithms;
+        newAlgorithms.get(namealgo).favorite = !newAlgorithms.get(namealgo).favorite;
+        this.forceUpdate()
     }
 
-    updateAlgorithms() {
+    saveAlgorithms() {
+        const values = Array.from(this.state.algorithms.values());
         const bodyAlgo = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            credentials: 'include'
+            credentials: 'include',
+            body: JSON.stringify(values)
         };
-        fetch('http://localhost:8000/api/algorithms', bodyAlgo)
+        fetch(setting.host + '/algorithms', bodyAlgo)
             .then(response => {
-                const jsonResp = response.json().then(data => {
-                    this.setState({
-                        algorithms: data
-                    })
-                });
+                console.log(response.status);
             })
             .catch(err => console.error('Error: ', err));
     }
@@ -78,6 +77,7 @@ class Algorithms extends Component {
     }
 
     componentDidMount () {
+        console.log(setting.host);
         this.loadAlgorithms();
     }
 
@@ -86,25 +86,24 @@ class Algorithms extends Component {
         return (
             <tbody>
             {
-                sortedValues.map(function(algorithm) {
+                sortedValues.map((algorithm) => {
                     const colorBtn = Algorithms.getColorButton(algorithm.countrun);
                     return (
                         <tr>
-                            <td>{algorithm.namealgo}</td>
-                            <td>
+                            <td key={algorithm.namealgo + 'name'}>{algorithm.namealgo}</td>
+                            <td key={algorithm.namealgo + 'switch'}>
                                 <AppSwitch
-                                    // className={'float-right mb-0'}
                                     label
                                     color={'info'}
                                     onChange={
-                                        function() {
-                                            console.log({algorithm})
+                                        () => {
+                                            this.updateStateAlgorithms(algorithm.namealgo);
                                         }
                                     }
                                     defaultChecked={algorithm.favorite}
                                     size={'sm'}/>
                             </td>
-                            <td>
+                            <td key={algorithm.namealgo + 'badge'}>
                                 <Badge color={colorBtn}>{algorithm.countrun}</Badge>
                             </td>
                         </tr>)
@@ -120,9 +119,16 @@ class Algorithms extends Component {
                 <div className="card mb-3">
                     <table className="table table-sm table-striped">
                         <thead className="thead-light">
-                        <th>Username</th>
-                        <th>Favorite</th>
-                        <th>Status</th>
+                        <th key='Username'>Username</th>
+                        <th key='Favorite'>
+                            <Button
+                                active
+                                block
+                                color="secondary"
+                                onClick={() => {this.saveAlgorithms();}}
+                                aria-pressed="true">Favorite</Button>
+                        </th>
+                        <th key='Status'>Status</th>
                         </thead>
                         {this.renderFavorite()}
                     </table>

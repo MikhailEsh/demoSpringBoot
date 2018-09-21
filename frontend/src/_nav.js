@@ -6,11 +6,6 @@ export default {
       icon: 'icon-puzzle',
       children: [
           {
-              name: 'Tables',
-              url: '/base/tables',
-              icon: 'icon-puzzle',
-          },
-          {
               name: 'ReportPage',
               url: '/base/reportpage',
               icon: 'icon-puzzle',
