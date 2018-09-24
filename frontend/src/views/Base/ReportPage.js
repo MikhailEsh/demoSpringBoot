@@ -12,13 +12,12 @@ class ReportPage extends Component {
 
     constructor(props) {
         super(props);
+        const multitab = tables.multitabs.find((element) => {return element.level === 1;})
         this.state = {
             multitab: multitab,
             activeTab: {
-                xMultitab: multitabs[0].xMultitab,
-                yMultitab: multitabs[0].yMultitab,
-                zMultitab: multitabs[0].tables[0].zMultitab
-
+                xMultitab: multitab.xMultitabs[0],
+                yMultitab: multitab.yMultitabs[0]
             },
             algorithms: [],
             savedAlgorithms: true

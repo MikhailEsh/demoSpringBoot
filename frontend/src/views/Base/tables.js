@@ -1,36 +1,23 @@
 export default {
     multitabs: [
         {
-            xMultitab:  'First Level',
-            yMultitab: 'Asset_class',
-            tables: [
+            level: 1,
+            xMultitabs: [
+                'Show alerts',
+                'Show Incidents'
+            ],
+            yMultitabs: [
+                'Asset_class',
+                'Business_line',
+                'Client'
+            ],
+            tabels: [
                 {
-                    zMultitab: 'Show alerts',
-                    headers: [
-                        'Asset class',
-                        'Deal_Type',
-                        'Deals',
-                        'Rogue_Trading',
-                        'AML',
-                        'Market_Abuse',
-                        'Unusual_Activity',
-                        'Efectiveness'
-                    ]
-                },
-                {
-                    zMultitab: 'Show incidents',
-                    headers: [
-                        'Asset class',
-                        'Deal_Type',
-                        'Deals',
-                        'Rogue_Trading',
-                        'AML',
-                        'Market_Abuse',
-                        'Unusual_Activity',
-                        'Efectiveness'
-                    ]
+                    x: 'Show alerts',
+                    y: 'Asset_class',
                 }
             ]
+
         }
     ]
 };
