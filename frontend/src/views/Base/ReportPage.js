@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {Col, Row} from 'reactstrap';
 import Algorithms from './Algorithms'
 import TableReport from './TableReport'
 import Alarm from './Alarm'
 import MultiTab from './MultiTab'
 import VerticalPills from './VerticalPills'
+import RadioButton from './RadioButton'
 import './ReportPage.css'
 import tables from "./tables";
 
@@ -12,12 +12,13 @@ class ReportPage extends Component {
 
     constructor(props) {
         super(props);
-        const multitab = tables.multitabs.find((element) => {return element.level === 1;})
         this.state = {
             multitab: multitab,
             activeTab: {
-                xMultitab: multitab.xMultitabs[0],
-                yMultitab: multitab.yMultitabs[0]
+                xMultitab: multitabs[0].xMultitab,
+                yMultitab: multitabs[0].yMultitab,
+                zMultitab: multitabs[0].tables[0].zMultitab
+
             },
             algorithms: [],
             savedAlgorithms: true
@@ -33,7 +34,10 @@ class ReportPage extends Component {
                 <div className="sections" id="sections">
                     <TableReport/>
                 </div>
-                <div className="multitabs" id="multitabs">
+                <div className="zmultitabs" id="zmultitabs">
+                    <RadioButton/>
+                </div>
+                <div className="xmultitabs" id="xmultitabs">
                     <MultiTab activeTab={this.state.activeTab} xMultitabs={this.state.multitab.xMultitabs}/>
                 </div>
                 <div className="vertical-pills" id="vertical-pills">

@@ -21,8 +21,12 @@
     grid-area: alarm;
 }
 
-.multitabs {
-    grid-area: multitabs;
+.xmultitabs {
+    grid-area: xmultitabs;
+}
+
+.zmultitabs {
+    grid-area: zmultitabs;
 }
 
 .vertical-pills {
@@ -34,12 +38,13 @@
     box-sizing: border-box;
     display: grid;
     grid-template-areas:
-            "summary vertical-pills multitabs "
+            "summary vertical-pills zmultitabs "
+            "summary vertical-pills xmultitabs "
             "summary vertical-pills sections "
             "alarm  vertical-pills ."
             ". . .";
     grid-template-columns: 1fr 1fr 3fr;
-    grid-template-rows: 30px 4fr 1fr 60px;
+    grid-template-rows: 30px 30px 4fr 1fr 60px;
     grid-column-gap: 20px;
     grid-row-gap: 2px;
     min-height: 100vh;
